@@ -43,6 +43,7 @@ defineProps({ allAssetsLoaded: Boolean });
         "
         position="0.300 -0.207 -1.556"
         hide-in-vr="hideInAR: false"
+
       ></a-entity>
 
       <!-- Desktop gun only -->
@@ -66,7 +67,6 @@ defineProps({ allAssetsLoaded: Boolean });
     <!-- VR right controller -->
     <a-entity
       id="hand-right"
-      
       laser-controls="hand: right"
       raycaster="far: 50; objects: .clickable; showLine: true; lineColor: white;"
       cursor="fuse: false; rayOrigin: entity;"
