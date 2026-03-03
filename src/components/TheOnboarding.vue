@@ -19,7 +19,8 @@
 <template>
   <div id="onboarding" v-if="showOnboarding">
     <div>
-      <h1>Skeleton Wave Shooter ☠️</h1>
+      <h1>☠️ 🔫</h1>
+      <h2>Skeleton Wave Shooter</h2>
       <p v-if="!loaded">loading...</p>
       <button v-if="loaded" @click="enterScene()">Enter scene</button>
       <div class="licences">
@@ -38,7 +39,7 @@
         </section>
         <section>
           <h4>Source code</h4>
-          <blockquote><a href="https://github.com/Chabloz/a-frame-vite-vue-boilerplate">Github repo</a></blockquote>
+          <blockquote><a href="https://github.com/VictorWojciechowski/VR.git">Github repo</a></blockquote>
         </section>
         <dl>
           <dt>
@@ -95,7 +96,7 @@
 </template>
 
 <style scoped>
-  h1 { font-size: 1.5rem }
+  h1 { font-size: 5rem }
   a {
     color: #eee;
     text-decoration: none;
