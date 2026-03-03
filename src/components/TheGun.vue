@@ -10,7 +10,7 @@ import "../aframe/event-set.js";
     <!-- Desktop -->
     <a-entity
       gltf-model="#gun"
-      scale="0.0025 0.0025 0.0025"
+      scale="0.0015 0.0015 0.0015"
       rotation="0 180 0"
       hide-in-vr
     ></a-entity>
@@ -18,7 +18,7 @@ import "../aframe/event-set.js";
     <!-- VR -->
     <a-entity
       gltf-model="#gun"
-      scale="0.0025 0.0025 0.0025"
+      scale="0.0005 0.0005 0.0005"
       rotation="40 180 0"
       show-in-vr
     ></a-entity>

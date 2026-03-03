@@ -19,7 +19,7 @@
 <template>
   <div id="onboarding" v-if="showOnboarding">
     <div>
-      <h1>A-Frame + Vite + Vue Boilerplate</h1>
+      <h1>Skeleton Wave Shooter ☠️</h1>
       <p v-if="!loaded">loading...</p>
       <button v-if="loaded" @click="enterScene()">Enter scene</button>
       <div class="licences">
@@ -29,10 +29,6 @@
             <li>
               Desktop – Keyboard for move (WASD or Arrows keys) + Mouse for look
               control (Drag and drop)
-            </li>
-            <li>
-              Mobile – 1x Finger touch to go forward + 2x Fingers touch to go
-              backward + Gaze cursor for click
             </li>
             <li>
               VR/AR – walk + Teleport (Grip for grab and laser for

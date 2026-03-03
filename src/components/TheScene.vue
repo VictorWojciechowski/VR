@@ -12,6 +12,7 @@ import "../aframe/look-at.js";
 import ThePlayground from "./ThePlayground.vue";
 
 
+
 function handleCol() {
   console.log("collision detected !");
 }
@@ -34,6 +35,7 @@ const allAssetsLoaded = ref(false);
       <a-asset-item id="gun" src="assets/desert_eagle_gun.glb"></a-asset-item>
       <a-asset-item id="skeleton" src="assets/skeleton_animated.glb"></a-asset-item>
       <a-asset-item id="bulletModel" src="assets/bullet.glb"></a-asset-item>
+      <audio id="gunshot" src="assets/gunshot.mp3" preload="auto"></audio>
     </a-assets>
 
     <template v-if="allAssetsLoaded">

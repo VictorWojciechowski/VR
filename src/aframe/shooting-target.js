@@ -21,6 +21,13 @@ AFRAME.registerComponent('shooting-target', {
     if (!this.isAlive) return;
     this.isAlive = false;
 
+    // Son du coup de feu
+    const sound = document.querySelector('#gunshot');
+    if (sound) {
+      sound.currentTime = 0;
+      sound.play();
+    }
+
     this.el.setAttribute('animation-mixer', {
       clip: 'Take 001',
       loop: 'once',
