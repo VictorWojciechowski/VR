@@ -96,7 +96,9 @@ npm ci
 npm run dev expose
 ```
 
-3. Sur le casque, navigue vers l'adresse `[ip]:[port]` affichée dans le terminal.
+## VR Headset
+
+Sur le casque, navigue vers l'adresse `[ip]:[port]` affichée dans le terminal.
 
 > Le certificat est auto-signé, il faudra confirmer l'accès dans le navigateur du casque.
 
