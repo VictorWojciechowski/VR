@@ -3,7 +3,8 @@ import { ref, onMounted, onUnmounted } from "vue";
 import TheSkeleton from "./TheSkeleton.vue";
 
 const props = defineProps({
-  skeletonCount: { type: Number, default: 15 }
+  skeletonCount: { type: Number, default: 15 },
+  gameStarted: { type: Boolean, default: false }
 });
 
 function randomPos(min, max) {
@@ -55,6 +56,7 @@ onUnmounted(() => {
     ></a-entity>
 
     <TheSkeleton
+      v-if="gameStarted"
       v-for="(pos, index) in skeletonPositions"
       :key="`${index}-${pos.x}`"
       :position="`${pos.x} ${pos.y} ${pos.z}`"

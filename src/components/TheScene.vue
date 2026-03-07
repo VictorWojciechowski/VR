@@ -12,6 +12,7 @@ import ThePlayground from "./ThePlayground.vue";
 
 const emit = defineEmits(["loaded"]);
 const allAssetsLoaded = ref(false);
+const gameStarted = ref(false);
 
 onMounted(() => {
   const assets = document.querySelector('a-assets');
@@ -28,6 +29,7 @@ onMounted(() => {
     // Lance la musique quand le joueur clique sur "Enter scene"
     // À ce moment il y a eu une interaction utilisateur donc le navigateur autorise l'audio
     scene.addEventListener('enter-scene', () => {
+      gameStarted.value = true;
       const music = document.querySelector('#backgroundMusic');
       if (music) {
         music.loop = true;
@@ -77,7 +79,7 @@ onMounted(() => {
       <a-light type="directional" color="#FF3100" intensity="1" position="-1 1 0"></a-light>
       <a-light type="hemisphere" color="#883322" ground-color="#FFBBA8" intensity="1"></a-light>
 
-      <ThePlayground></ThePlayground>
+      <ThePlayground :gameStarted="gameStarted"></ThePlayground>
       <a-entity data-role="nav-mesh"></a-entity>
     </template>
 
