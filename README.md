@@ -109,4 +109,4 @@ Sur le casque, navigue vers l'adresse `[ip]:[port]` affichée dans le terminal.
 ![MIT License](https://img.shields.io/badge/License-MIT-brightgreen?style=for-the-badge&color=%23262626)
 
 
-# [>> DEMO <<](https://vr.onivers.com/victor/)
+# [PLAY MY GAME](https://vr.onivers.com/victor/)
