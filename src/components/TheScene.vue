@@ -15,10 +15,36 @@ const allAssetsLoaded = ref(false);
 
 onMounted(() => {
   const assets = document.querySelector('a-assets');
+  const scene = document.querySelector('a-scene');
+
   if (assets) {
     assets.addEventListener('loaded', () => {
       allAssetsLoaded.value = true;
       emit('loaded');
+
+      const music = document.querySelector('#backgroundMusic');
+      if (music) {
+        music.loop = true;
+        music.volume = 0.4;
+        music.play();
+      }
+    });
+  }
+
+  if (scene) {
+    scene.addEventListener('game-ended', () => {
+      const music = document.querySelector('#backgroundMusic');
+      if (music) {
+        music.pause();
+        music.currentTime = 0;
+      }
+    });
+
+    scene.addEventListener('game-restart', () => {
+      const music = document.querySelector('#backgroundMusic');
+      if (music) {
+        music.play();
+      }
     });
   }
 });
@@ -26,10 +52,11 @@ onMounted(() => {
 
 <template>
   <a-scene
-    background="color: #a3d0ed"
-    fog="type: linear; color: #abd0ed; near: 30; far: 100"
+    background="color: #0a0a0a"
+    fog="type: linear; color: #A14C3B; near: 10; far: 40"
     abloom
     game-manager
+    light="defaultLightsEnabled: false"
   >
     <a-assets>
       <a-asset-item id="playground" src="assets/mephiles_phase_1.glb"></a-asset-item>
@@ -37,9 +64,15 @@ onMounted(() => {
       <a-asset-item id="skeleton" src="assets/skeleton_animated.glb"></a-asset-item>
       <a-asset-item id="bulletModel" src="assets/bullet.glb"></a-asset-item>
       <audio id="gunshot" src="assets/gunshot.mp3" preload="auto"></audio>
+      <audio id="backgroundMusic" src="assets/background_music.mp3" preload="auto"></audio>
     </a-assets>
 
     <template v-if="allAssetsLoaded">
+      <!-- Lumières ténébreuses -->
+      <a-light type="ambient" color="#111111" intensity="1"></a-light>
+      <a-light type="directional" color="#FF3100" intensity="1" position="-1 1 0"></a-light>
+      <a-light type="hemisphere" color="#883322" ground-color="#FFBBA8" intensity="1"></a-light>
+
       <ThePlayground></ThePlayground>
       <a-entity data-role="nav-mesh"></a-entity>
     </template>

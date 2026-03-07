@@ -25,6 +25,7 @@ AFRAME.registerComponent('shooting-target', {
     const sound = document.querySelector('#gunshot');
     if (sound) {
       sound.currentTime = 0;
+      sound.volume = 0.3;
       sound.play();
     }
 
