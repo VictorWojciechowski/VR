@@ -22,7 +22,7 @@ function enterScene() {
 <template>
   <div id="onboarding" v-if="showOnboarding">
     <div>
-      <h1>☠️ 🔫</h1>
+      <img src="/assets/logo.png" alt="Skeleton Wave Shooter Logo" width="200" />
       <h2>Skeleton Wave Shooter</h2>
       <p v-if="!loaded">loading...</p>
       <button v-if="loaded" @click="enterScene()">Enter scene</button>
@@ -35,8 +35,7 @@ function enterScene() {
               control (Drag and drop)
             </li>
             <li>
-              VR/AR – walk + Teleport (Grip for grab and laser for click) + Gaze
-              cursor for click
+              VR/AR – Use headset for viewing and controllers for shooting (controller trigger for pistol shooting)
             </li>
           </ul>
         </section>
