@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./logo.svg" alt="VAV Logo" align="center"/>
+    <img src="/public/assets/logo.png" alt="Skeleton Wave Shooter logo" align="center"/>
 </p>
 <h1 align="center">Skeleton Wave Shooter</h1>
 
@@ -47,7 +47,7 @@ Cette architecture m'a appris à séparer les responsabilités : au lieu de tout
 - [A-Frame](https://aframe.io/) v1.7.1
 - [Vue 3](https://vuejs.org/) + [Vite](https://vitejs.dev/)
 - [Three.js](https://threejs.org/) r173
-- Boilerplate de base : [a-frame-vite-vue-boilerplate](https://github.com/Chabloz/a-frame-vite-vue-boilerplate) par M. Nicolas Chabloz dans le cadre du cours de Réalité Virtuelle, HEIG-VD
+- Boilerplate de base : [a-frame-vite-vue-boilerplate](https://github.com/Chabloz/a-frame-vite-vue-boilerplate) par [M. Nicolas Chabloz](https://github.com/Chabloz) dans le cadre du cours de Réalité Virtuelle, HEIG-VD
 
 ---
 
