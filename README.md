@@ -82,6 +82,10 @@ Cette architecture m'a appris à séparer les responsabilités : au lieu de tout
 - [Dark rumble atmosphere, loops, droning, slight low pitched whine](https://www.zapsplat.com/?registration_redirect=1&item_id=166531) par [Dark Harmonics](https://www.zapsplat.com/author/dark-harmonics/) — [Standard License Agreement](https://www.zapsplat.com/license-type/standard-license/)
 - [Demon or evil monster, snarl, nasal, soft](https://www.zapsplat.com/sound-effect-category/monsters-and-creatures/) par [Zapsplat](https://www.zapsplat.com/author/zapsplat/) — [Standard License Agreement](https://www.zapsplat.com/license-type/standard-license/)
 
+
+### Logo
+
+- [ChatGPT](https://chatgpt.com/)
 ---
 
 ## Quickstart
