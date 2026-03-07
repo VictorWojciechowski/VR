@@ -1,5 +1,4 @@
-AFRAME.registerSystem('game-manager', {
-
+AFRAME.registerSystem("game-manager", {
   init: function () {
     this.score = 0;
     this.timer = 0;
@@ -15,22 +14,42 @@ AFRAME.registerSystem('game-manager', {
     this.onGameRestart = this.onGameRestart.bind(this);
     this.onSkeletonCount = this.onSkeletonCount.bind(this);
 
-    this.el.addEventListener('score-update', this.onScoreUpdate);
-    this.el.addEventListener('game-over', this.onGameOver);
-    this.el.addEventListener('game-restart', this.onGameRestart);
-    this.el.addEventListener('skeleton-count', this.onSkeletonCount);
+    this.el.addEventListener("score-update", this.onScoreUpdate);
+    this.el.addEventListener("game-over", this.onGameOver);
+    this.el.addEventListener("game-restart", this.onGameRestart);
+    this.el.addEventListener("skeleton-count", this.onSkeletonCount);
+
+    this.lastSnarlTime = 0;
+    this.nextSnarl = this.randomSnarl();
 
     this.startTimer();
+  },
+
+  randomSnarl: function () {
+    return (12 + Math.random() * 8) * 1000;
+  },
+  tick: function (time) {
+    if (this.isGameOver || this.isVictory) return;
+    if (time - this.lastSnarlTime > this.nextSnarl) {
+      const sound = document.querySelector("#snarl");
+      if (sound) {
+        sound.currentTime = 0;
+        sound.volume = 0.2;
+        sound.play();
+      }
+      this.lastSnarlTime = time;
+      this.nextSnarl = this.randomSnarl();
+    }
   },
 
   startTimer: function () {
     this.timerInterval = setInterval(() => {
       if (!this.isGameOver && !this.isVictory) {
         this.timer++;
-        this.el.emit('hud-update', {
+        this.el.emit("hud-update", {
           score: this.score,
           timer: this.timer,
-          highscores: this.highscores
+          highscores: this.highscores,
         });
       }
     }, 1000);
@@ -44,13 +63,15 @@ AFRAME.registerSystem('game-manager', {
   },
 
   formatTime: function (seconds) {
-    const m = Math.floor(seconds / 60).toString().padStart(2, '0');
-    const s = (seconds % 60).toString().padStart(2, '0');
+    const m = Math.floor(seconds / 60)
+      .toString()
+      .padStart(2, "0");
+    const s = (seconds % 60).toString().padStart(2, "0");
     return `${m}:${s}`;
   },
 
   loadHighscores: function () {
-    const saved = localStorage.getItem('skeleton-highscores');
+    const saved = localStorage.getItem("skeleton-highscores");
     return saved ? JSON.parse(saved) : [];
   },
 
@@ -58,12 +79,15 @@ AFRAME.registerSystem('game-manager', {
     const entry = {
       score: this.score,
       time: this.formatTime(this.timer),
-      date: new Date().toLocaleDateString()
+      date: new Date().toLocaleDateString(),
     };
     this.highscores.push(entry);
     this.highscores.sort((a, b) => b.score - a.score);
     this.highscores = this.highscores.slice(0, 5);
-    localStorage.setItem('skeleton-highscores', JSON.stringify(this.highscores));
+    localStorage.setItem(
+      "skeleton-highscores",
+      JSON.stringify(this.highscores),
+    );
   },
 
   onSkeletonCount: function (e) {
@@ -74,21 +98,21 @@ AFRAME.registerSystem('game-manager', {
     this.score += e.detail.points;
     this.killedCount++;
 
-    this.el.emit('hud-update', {
+    this.el.emit("hud-update", {
       score: this.score,
       timer: this.timer,
-      highscores: this.highscores
+      highscores: this.highscores,
     });
 
     if (this.killedCount >= this.skeletonCount) {
       this.isVictory = true;
       this.stopTimer();
       this.saveHighscore();
-      this.el.emit('game-ended', {
+      this.el.emit("game-ended", {
         victory: true,
         score: this.score,
         time: this.formatTime(this.timer),
-        highscores: this.highscores
+        highscores: this.highscores,
       });
     }
   },
@@ -98,11 +122,11 @@ AFRAME.registerSystem('game-manager', {
     this.isGameOver = true;
     this.stopTimer();
     this.saveHighscore();
-    this.el.emit('game-ended', {
+    this.el.emit("game-ended", {
       victory: false,
       score: this.score,
       time: this.formatTime(this.timer),
-      highscores: this.highscores
+      highscores: this.highscores,
     });
   },
 
@@ -119,9 +143,9 @@ AFRAME.registerSystem('game-manager', {
 
   remove: function () {
     this.stopTimer();
-    this.el.removeEventListener('score-update', this.onScoreUpdate);
-    this.el.removeEventListener('game-over', this.onGameOver);
-    this.el.removeEventListener('game-restart', this.onGameRestart);
-    this.el.removeEventListener('skeleton-count', this.onSkeletonCount);
-  }
+    this.el.removeEventListener("score-update", this.onScoreUpdate);
+    this.el.removeEventListener("game-over", this.onGameOver);
+    this.el.removeEventListener("game-restart", this.onGameRestart);
+    this.el.removeEventListener("skeleton-count", this.onSkeletonCount);
+  },
 });

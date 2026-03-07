@@ -21,7 +21,13 @@ onMounted(() => {
     assets.addEventListener('loaded', () => {
       allAssetsLoaded.value = true;
       emit('loaded');
+    });
+  }
 
+  if (scene) {
+    // Lance la musique quand le joueur clique sur "Enter scene"
+    // À ce moment il y a eu une interaction utilisateur donc le navigateur autorise l'audio
+    scene.addEventListener('enter-scene', () => {
       const music = document.querySelector('#backgroundMusic');
       if (music) {
         music.loop = true;
@@ -29,9 +35,7 @@ onMounted(() => {
         music.play();
       }
     });
-  }
 
-  if (scene) {
     scene.addEventListener('game-ended', () => {
       const music = document.querySelector('#backgroundMusic');
       if (music) {
@@ -65,10 +69,10 @@ onMounted(() => {
       <a-asset-item id="bulletModel" src="assets/bullet.glb"></a-asset-item>
       <audio id="gunshot" src="assets/gunshot.mp3" preload="auto"></audio>
       <audio id="backgroundMusic" src="assets/background_music.mp3" preload="auto"></audio>
+      <audio id="snarl" src="assets/snarl.mp3" preload="auto"></audio>
     </a-assets>
 
     <template v-if="allAssetsLoaded">
-      <!-- Lumières ténébreuses -->
       <a-light type="ambient" color="#111111" intensity="1"></a-light>
       <a-light type="directional" color="#FF3100" intensity="1" position="-1 1 0"></a-light>
       <a-light type="hemisphere" color="#883322" ground-color="#FFBBA8" intensity="1"></a-light>
