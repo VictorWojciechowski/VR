@@ -64,7 +64,7 @@ Cette architecture m'a appris à séparer les responsabilités : au lieu de tout
 ## Modes de jeu supportés
 
 - **Desktop** — Clavier WASD / flèches pour se déplacer + Souris pour regarder + Clic pour tirer
-- **VR/AR** — Utiliser l'orientation du headset pour regarder et la gachette de la manette VR pour tirer
+- **VR** — Utiliser l'orientation du headset pour regarder et la gachette de la manette VR pour tirer
 
 ---
 
