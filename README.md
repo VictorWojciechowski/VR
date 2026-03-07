@@ -39,11 +39,6 @@ Cette architecture m'a appris à séparer les responsabilités : au lieu de tout
 | `game-manager.js` | Système global qui gère le score, le timer, les highscores, les sons de snarl et les événements de fin de partie |
 | `skeleton-walker.js` | Fait marcher le squelette vers le joueur et déclenche le game over si la distance est trop faible |
 | `shooting-target.js` | Détecte le clic sur un squelette, déclenche l'animation de mort, le son de tir et émet un événement de score |
-| `clickable.js` | Change la couleur du curseur au survol d'un objet interactif |
-| `show-in-vr.js` | Affiche une entité uniquement en mode VR |
-| `hide-in-vr.js` | Cache une entité en mode VR |
-| `disable-in-vr.js` | Désactive un composant spécifique en mode VR |
-| `bloom.js` | Ajoute un effet de post-processing bloom sur la scène |
 
 ---
 
@@ -52,7 +47,7 @@ Cette architecture m'a appris à séparer les responsabilités : au lieu de tout
 - [A-Frame](https://aframe.io/) v1.7.1
 - [Vue 3](https://vuejs.org/) + [Vite](https://vitejs.dev/)
 - [Three.js](https://threejs.org/) r173
-- Boilerplate de base : [a-frame-vite-vue-boilerplate](https://github.com/Chabloz/a-frame-vite-vue-boilerplate) par le cours IM, HEIG-VD
+- Boilerplate de base : [a-frame-vite-vue-boilerplate](https://github.com/Chabloz/a-frame-vite-vue-boilerplate) par M. Nicolas Chabloz dans le cadre du cours de Réalité Virtuelle, HEIG-VD
 
 ---
 
@@ -69,7 +64,7 @@ Cette architecture m'a appris à séparer les responsabilités : au lieu de tout
 ## Modes de jeu supportés
 
 - **Desktop** — Clavier WASD / flèches pour se déplacer + Souris pour regarder + Clic pour tirer
-- **VR/AR** — Marche + Téléportation (Grip pour attraper, laser pour cliquer) + Curseur gaze pour cliquer
+- **VR/AR** — Utiliser l'orientation du headset pour regarder et la gachette de la manette VR pour tirer
 
 ---
 
@@ -94,22 +89,7 @@ Cette architecture m'a appris à séparer les responsabilités : au lieu de tout
 ```sh
 git clone https://github.com/VictorWojciechowski/VR.git .
 npm ci
-npm run dev
-```
-
-### Build
-
-```sh
-npm run build
-```
-
-## Dev sur casque VR
-
-1. Connecte ton appareil de développement et ton casque sur le **même réseau**.
-2. Lance le serveur exposé :
-
-```sh
-npm run dev-expose
+npm run dev expose
 ```
 
 3. Sur le casque, navigue vers l'adresse `[ip]:[port]` affichée dans le terminal.
@@ -118,9 +98,9 @@ npm run dev-expose
 
 ---
 
+
+### [>> DEMO <<](https://vr.onivers.com/victor/)
+
 ## License
 
 ![MIT License](https://img.shields.io/badge/License-MIT-brightgreen?style=for-the-badge&color=%23262626)
-
-### [>> DEMO <<](https://onivers.com/aframe-vue-boilerplate/)
-
