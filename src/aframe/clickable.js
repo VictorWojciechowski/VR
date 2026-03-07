@@ -33,9 +33,11 @@ AFRAME.registerComponent('clickable', {
   },
 
   remove: function () {
+  if (this.cursor) {
     this.changeCursorColor(this.savedColor);
-    this.el.removeEventListener('mouseenter', this.onEnter);
-    this.el.removeEventListener('mouseleave', this.onLeave);
-  },
+  }
+  this.el.removeEventListener('mouseenter', this.onEnter);
+  this.el.removeEventListener('mouseleave', this.onLeave);
+},
 
 });

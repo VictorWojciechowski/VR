@@ -11,7 +11,7 @@ AFRAME.registerComponent('shooting-target', {
     });
 
     this.onHit = this.onHit.bind(this);
-    const model = this.el.querySelector('[gltf-model]');
+    const model = this.el.querySelector('a-box');
     const target = model || this.el;
     target.addEventListener('click', this.onHit);
     this._target = target;

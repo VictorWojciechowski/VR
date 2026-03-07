@@ -75,17 +75,28 @@
             By Ada Rose Cannon under MIT License
           </dd>
 
-          <dt>
-            <a href="https://sketchfab.com/3d-models/vr-gallery-1ac32ed62fdf424498acc146fad31f7e" target="_blank">VR Gallery</a>
-          </dt><dd>
-            by <a href="https://sketchfab.com/mvrc.art" target="_blank">Maxim Mavrichev</a>
+          <dt>Skeleton animated</dt>
+          <dd>
+            by <a href="https://sketchfab.com/3d-models/skeleton-animated-9210377c7a514cf6b48a31b9d3991ff3" target="_blank">dnielmclogan</a>
             under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
           </dd>
 
           <dt>
-            <a href="https://sketchfab.com/3d-models/3d-gallery-for-vr-projects-68f77ed8558c4bd59e0a13e2cc9d1fd1" target="_blank">Physic room model</a>
+            <a href="https://pixabay.com/sound-effects/film-special-effects-single-pistol-gunshot-3-101923/" target="_blank">Single gunshot sound</a>
           </dt><dd>
-            by <a href="https://sketchfab.com/tekuto1s" target="_blank">tekuto1s</a>
+            by <a href="https://pixabay.com/users/freesound_community-46691455/" target="_blank">morganpurkis for freesound community</a>
+            under <a href="https://pixabay.com/service/license-summary/" target="_blank">Pixabay Content License</a>
+          </dd>
+          <dt>
+            <a href="https://sketchfab.com/3d-models/mephiles-phase-1-d506a5f62be046b49bf9ea424333b9f2" target="_blank">Mephiles Phase_1</a>
+          </dt><dd>
+            by <a href="https://pixabay.com/users/freesound_community-46691455/" target="_blank">World Game</a>
+            under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
+          </dd>
+          <dt>
+            <a href="https://sketchfab.com/3d-models/desert-eagle-gun-1605b6c38826433fb3fe564e1d043199" target="_blank">Desert Eagle Gun</a>
+          </dt><dd>
+            by <a href="https://sketchfab.com/attix84work" target="_blank">attix84work</a>
             under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>
           </dd>
 

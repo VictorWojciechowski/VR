@@ -14,11 +14,20 @@ const props = defineProps({
     :skeleton-walker="`speed: ${props.speed}`"
     shooting-target
   >
-    <a-entity
+    <!-- Hitbox invisible plus grande que le squelette -->
+    <a-box
+      width="1"
+      height="1.8"
+      depth="0.8"
+      position="0 0.9 0"
+      material="transparent: true; opacity: 0"
       clickable
+    ></a-box>
+
+    <!-- Modèle squelette -->
+    <a-entity
       gltf-model="#skeleton"
       scale="1.2 1.2 1.2"
     ></a-entity>
   </a-entity>
-  
 </template>
