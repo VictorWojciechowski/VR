@@ -26,7 +26,7 @@ import "../aframe/event-set.js";
       raycaster="far: 50; objects: [clickable]; showLine: true; lineColor: white;"
       cursor="fuse: false; rayOrigin: entity;"
       rotation="-40 0 0"
-      position="0 0 -0.2"
+      position="0.25 -0.2 -0.2"
       event-set="event: componentdisabled; attribute: raycaster.showLine; value: false;"
       disable-in-desktop="component: raycaster;"
     ></a-entity>
